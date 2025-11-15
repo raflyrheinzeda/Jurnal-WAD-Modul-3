@@ -11,7 +11,14 @@ return new class extends Migration
     {
         # 1. Buat kolom tabel sesuai data yang ingin ditampilkan
         Schema::create('users', function (Blueprint $table) {
-
+            $table->id();
+            $table->string('nama');
+            $table->string('nim');
+            $table->string('kelas');
+            $table->string('prodi');
+            $table->string('fakultas');
+            $table->string('email');
+            $table->timestamps();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

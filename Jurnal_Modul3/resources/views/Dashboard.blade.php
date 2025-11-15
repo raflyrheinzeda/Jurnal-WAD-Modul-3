@@ -1,4 +1,4 @@
-<!-- 1. Hubungkan file Dashboard.blade.php dengan dashapp.blade.php-->
+@extends('app')
 
 @section('title', 'Dashboard Mahasiswa')
 
@@ -8,7 +8,7 @@
         <div class="animated-bg"></div>
 
          <!-- 2. Isi value atribut href agar mendirect menuju halaman profile-->
-        <a href="" class="btn-profile-top">
+        <a href="{{ url('profil') }}" class="btn-profile-top">
             <i class="bi bi-person-circle me-1"></i> Lihat Profil
         </a>
 
@@ -28,7 +28,8 @@
                 <div class="greeting-box">
                     <h1 class="greeting-title">
                         <!-- 4. Panggil variabel dari controller untuk menampilkan salam-->
-                        <span class="highlight-name"> <!-- 5. Panggil variabel dari controller untuk menampilkan nama--></span>
+                         {{salam}}
+                        <span class="highlight-name">{{$mahasiswa -> nama}}</span>
                         <span class="wave">👋</span>
                     </h1>
                     <p class="greeting-sub">Selamat datang di dashboard praktikan EAD</p>
